@@ -1,5 +1,8 @@
 <h1>RoBoDoc: AI-Powered Medical Assistant</h1>
 
+<i>Name: Vanshika Gupta
+Roll number: cse240001076</i>
+
 RoBoDoc is an AI-driven chatbot designed to simulate real doctor interactions. Built with Streamlit, Groq API, FAISS, and speech processing libraries, it predicts diseases based on user symptoms and provides medical guidance.
 
 <b>Features</b>
