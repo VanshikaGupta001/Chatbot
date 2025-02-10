@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 <u>Run the Streamlit app:</u>
 
-streamlit run Robodoc_app.py
+streamlit run robodoc.py
 
 <b>Conclusion</b>
 
