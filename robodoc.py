@@ -25,7 +25,7 @@ def text_to_speech(input_text, speed=1.3):
     tts_file_path = "temp_audio_play.mp3"
     tts.save(tts_file_path)
 
-    # Load the audio file and increase speed
+    # Load the audio file 
     audio = AudioSegment.from_file(tts_file_path)
     faster_audio = audio.speedup(playback_speed=speed)
     
@@ -46,21 +46,19 @@ def autoplay_audio(file_path: str):
     """
     st.markdown(md, unsafe_allow_html=True)
     
-# Initialize Groq API
+# Groq API
 working_dir = os.path.dirname(os.path.abspath(__file__))
 config_data = json.load(open(f"{working_dir}/config.json"))
 
-# Set API keys
 api_key = config_data["GROQ_API_KEY"]
 os.environ["GROQ_API_KEY"] = api_key
 
 groq_client = Groq(api_key=api_key)
 
-# Load or initialize FAISS index for RAG
+# Load FAISS index for RAG
 index = faiss.IndexFlatL2(768)  # Assuming 768-dimensional embeddings
 knowledge_base = []  # Placeholder for documents
 
-# Function to retrieve relevant documents
 def retrieve_documents(query_embedding, top_k=3):
     if len(knowledge_base) == 0:
         return []
@@ -68,7 +66,7 @@ def retrieve_documents(query_embedding, top_k=3):
     return [knowledge_base[i] for i in indices[0]]
 
 def get_disease_prediction(user_input, conversation_history):
-    query_embedding = np.random.rand(768).astype("float32")  # Placeholder embedding
+    query_embedding = np.random.rand(768).astype("float32")  
     retrieved_docs = retrieve_documents(query_embedding)
     context = "\n".join(retrieved_docs)
     
