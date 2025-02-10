@@ -25,6 +25,20 @@ Response is displayed as text and spoken aloud.
 
 Conversation history is maintained for contextual engagement.
 
+<b>How to Run</b>
+
+<u>Clone the repository:</u>
+
+git clone https://github.com/VanshikaGupta001/Chatbot
+
+<u>Install dependencies:</u>
+
+pip install -r requirements.txt
+
+<u>Run the Streamlit app:</u>
+
+streamlit run Robodoc_app.py
+
 <b>Conclusion</b>
 
 RoBoDoc enhances AI-driven medical interactions using RAG, speech processing, and chatbot intelligence. Future improvements include refining FAISS indexing with real medical data for greater accuracy.
